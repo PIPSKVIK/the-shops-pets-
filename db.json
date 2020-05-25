@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "image": "1.jpg",
+      "name": "T-short 1",
+      "price": 100,
+      "article": "T1",
+      "avaliable": true
+    },
+    {
+      "image": "2.jpg",
+      "name": "T-short 2",
+      "price": 150,
+      "article": "T2",
+      "avaliable": true
+    },
+    {
+      "image": "3.jpg",
+      "name": "T-short 3",
+      "price": 200,
+      "article": "T3",
+      "avaliable": true
+    },
+    {
+      "image": "4.jpg",
+      "name": "T-short 4",
+      "price": 250,
+      "article": "T4",
+      "avaliable": true
+    },
+    {
+      "image": "5.jpg",
+      "name": "T-short 5",
+      "price": 300,
+      "article": "T5",
+      "avaliable": true
+    },
+    {
+      "image": "6.jpg",
+      "name": "T-short 6",
+      "price": 350,
+      "article": "T6",
+      "avaliable": true
+    }
+  ]
+}
