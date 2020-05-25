@@ -23,3 +23,8 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 # the-shops-pets-
+
+### Так же, перед стартом, нужно запустить сервак локальный 
+```
+npm run server
+```
