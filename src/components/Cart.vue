@@ -1,14 +1,18 @@
 <template>
   <div class="cart">
+
     <router-link
       :to="{name: 'catalog'}"
       class="cart__link-catalog"
     >
-      Back to Catalog
+      <ButtonLink>
+        Back to Catalog
+      </ButtonLink>
     </router-link>
+
     <div v-if="!cart_data.length">
       <p class="cart__no-products">No products...</p>
-      <img src="../assets/cart.jpg" width="100" height="100">
+      <img src="../assets/cart.jpg" width="200" height="200">
     </div>
     <CartItem
       v-for="(item, index) in cart_data"
@@ -27,11 +31,13 @@
 
 <script>
 import CartItem from '@/components/CartItem'
+import ButtonLink from '@/components/uiComponets/ButtonLink'
 import { mapActions } from 'vuex'
 export default {
   name: 'Cart',
   components: {
-    CartItem
+    CartItem,
+    ButtonLink
   },
   props: {
     cart_data: {
@@ -95,10 +101,11 @@ p {
 
 .cart__no-products {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 1;
   font-weight: 700;
   font-style: italic;
+  margin-bottom: 30px;
 }
 
 .cart {
@@ -121,21 +128,9 @@ p {
 }
 
 .cart__link-catalog {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  color: rgb(255, 255, 255);
   text-decoration: none;
-  font-style: italic;
-  padding: 10px;
-  background: rgba(46, 42, 42, 0.75);
-  border-radius: 0 20px 0 20px;
-    &:hover {
-      border-radius: 20px 0 20px 0;
-      transition: 0.5s;
-    }
-    &:active {
-      background: rgba(46, 42, 42, 0.35);
-    }
+  position: fixed;
+  top: 30px;
+  left: 30px;
 }
 </style>

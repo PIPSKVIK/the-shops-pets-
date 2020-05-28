@@ -4,5 +4,8 @@ export default {
   },
   CART (state) {
     return state.cart
+  },
+  OPTIONS (state) {
+    return state.options
   }
 }

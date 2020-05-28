@@ -2,8 +2,20 @@
   <section>
     <div>
       <h2>Catalog</h2>
-      <router-link :to="{name: 'cart', params: {cart_data: CART} }">
-        <div class="catalog__link-cart">Cart: {{ CART.length }}</div>
+      <router-link
+        :to=" { name: 'select' } "
+        class="catalog-select__link"
+      >
+        <ButtonLink>
+          Select
+        </ButtonLink>
+      </router-link>
+      <router-link
+        :to="{name: 'cart', params: {cart_data: CART} }"
+        class="catalog-cart__link">
+        <ButtonLink>
+          Cart: {{ CART.length }}
+        </ButtonLink>
       </router-link>
     </div>
     <div class="catalog">
@@ -19,13 +31,37 @@
 
 <script>
 import CatalogItem from '@/components/CatalogItem'
+import ButtonLink from '@/components/uiComponets/ButtonLink'
 import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'Catalog',
   components: {
-    CatalogItem
+    CatalogItem,
+    ButtonLink
   },
   data: () => ({
+    options: [
+      {
+        name: 'Options 1',
+        value: 1
+      },
+      {
+        name: 'Options 2',
+        value: 2
+      },
+      {
+        name: 'Options 3',
+        value: 3
+      },
+      {
+        name: 'Options 4',
+        value: 4
+      },
+      {
+        name: 'Options 5',
+        value: 5
+      }
+    ]
   }),
   methods: {
     addToCart (data) {
@@ -54,28 +90,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.catalog {
-  display: flex;
-  flex-wrap: wrap;
-  width: 600px;
-}
+  .catalog {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+  }
 
-.catalog__link-cart {
-  position: fixed;
-  padding: 15px;
-  top: 20px;
-  right: 20px;
-  border-radius: 20px 0 20px 0;
-  background: rgba(26, 24, 24, 0.75);
-  color: white;
-  cursor: pointer;
-    &:hover {
-      border-radius: 0 20px 0 20px;
-      transition: 0.5s;
-    }
+  .catalog-cart__link {
+    text-decoration: none;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+  }
 
-    &:active {
-      background: rgba(26, 24, 24, 0.35);
-    }
-}
+  .catalog-select__link {
+    text-decoration: none;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+  }
 </style>
